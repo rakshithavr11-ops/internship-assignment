@@ -1,0 +1,7 @@
+1.No loading or error state: The component does not show whether data is loading or an error has occurred. Add separate loading and error states.
+2. Unvalidated API data: setUser(data) directly stores the API response without checking it. Check the data before updating the state.3. Use of any: onFetch(data) uses any, which does not check the data type. Replace any with the User type.
+3. Use of any: onFetch(data) uses any, which does not check the data type. Replace any with the User type.
+4. Repeated API calls: If onFetch changes frequently, the API may be called again and again. Use useCallback in the parent component.
+5. No cleanup: If the user changes or the component closes while data is loading, an old request may cause problems. Use AbortController to cancel the previous request.
+6. Incorrect user type: user.name may cause a TypeScript error because the user state type is not defined. Define a User interface and use it in useState.
+7. Error message not displayed: The component only displays Loading or the user's name. Add conditions to display loading, error, and user details separately.
