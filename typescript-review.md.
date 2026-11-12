@@ -1,0 +1,3 @@
+Error lines: 2 and 3.
+Line 2: user may be undefined, and age may also be undefined; use optional chaining and a default value, such as (user?.age ?? 0).toFixed(2).
+Line 3: user.name can cause a runtime error if user is undefined; check that user exists before accessing name, or make the parameter required.
